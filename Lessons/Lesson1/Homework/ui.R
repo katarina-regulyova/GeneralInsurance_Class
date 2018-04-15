@@ -1,23 +1,11 @@
+dt_KPI <- read.csv("C:/Users/Katka/Documents/Aktuarstvo/Data/lesson2_KPI.csv")
 
-
-# Use a fluid Bootstrap layout
-fluidPage(    
-  
-  # Give the page a title
-  titlePanel("Lesson 1 - Homework"),
-  
-
-  sidebarLayout(      
-    
-
-    sidebarPanel(
-
-    ),
-    
-    
-    mainPanel(
-       
-    )
-    
-  )
+ui <- fluidPage(
+  selectInput(
+    inputId = "selected_variable",
+    label = "Colouring Var: ",
+    choices = variable.names(dt_KPI),
+    selected = "Segment"
+  ),
+  plotOutput(outputId = "scatter_plot")
 )
